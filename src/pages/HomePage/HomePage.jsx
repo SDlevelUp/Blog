@@ -1,12 +1,18 @@
 import React from 'react'
 import Header from '../../header/Header';
+import Posts from '../../posts/Posts';
+import Sidebar from '../../sidebar/Sidebar';
+
 import "./homepage.css";
 
 export default function HomePage() {
     return (
-        <div className="homePage">
+        <>
             <Header />
-            homepage
-        </div>
+            <div className="homePage">
+                <Posts />
+                <Sidebar />
+            </div>
+        </>
     )
 }

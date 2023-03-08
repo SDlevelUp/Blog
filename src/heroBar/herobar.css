@@ -37,9 +37,12 @@
     color: #444;
 }
 
-.fa-user {
-    font-size: 20px;
+.heroBarImg {
+    width: 23px;
+    height: 23px;
     object-fit: cover;
+    margin-right: 15px;
+    cursor: pointer;
 }
 
 .heroList {

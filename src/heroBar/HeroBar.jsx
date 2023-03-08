@@ -8,9 +8,7 @@ export default function HeroBar() {
                 <i className="heroIcon fa-brands fa-facebook-f"></i>
                 <i className="heroIcon fa-brands fa-twitter"></i>
                 <i className="heroIcon fa-brands fa-instagram"></i>
-
             </div>
-
             <div className="heroCenter">
                 <ul className="heroList">
                     <li className="heroListItem">ACCEUIL</li>
@@ -20,12 +18,10 @@ export default function HeroBar() {
                     <li className="heroListItem">SE DÉCONNECTER</li>
                 </ul>
             </div>
-
             <div className="heroRight">
-                <i className="fa-solid fa-user"></i>
+                <img className="heroBarImg" src="./profile.png" alt="Header background" />
                 <i className="heroSearchIcon fa-solid fa-magnifying-glass"></i>
             </div>
-
         </div>
-    )
+    );
 }

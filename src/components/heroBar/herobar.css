@@ -59,4 +59,19 @@
     font-size: 18px;
     font-weight: 300;
     cursor: pointer;
+    text-decoration: none;
+    color: #cf9247;
+}
+
+
+.link {
+    text-decoration: none;
+    margin-right: 12px;
+    color: #cf9247;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.signOut {
+    color: black
 }

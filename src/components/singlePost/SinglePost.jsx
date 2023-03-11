@@ -1,4 +1,5 @@
 import "./singlepost.css";
+import { Link } from "react-router-dom";
 
 export default function SinglePost() {
     return (
@@ -6,7 +7,7 @@ export default function SinglePost() {
             <div className="singlePostWrapper">
                 <img
                     className="singlePostImg"
-                    src="./singlepost-1.png"
+                    src="./singlepost-1.jpg"
                     alt=""
                 />
                 <h1 className="singlePostTitle">
@@ -17,21 +18,25 @@ export default function SinglePost() {
                     </div>
                 </h1>
                 <div className="singlePostInfo">
-                    <span className="singlePostAuthor">
-                        Auteur: <b>Sarah</b>
+                    <span>
+                        Auteur:
+                        <b className="singlePostAuthor">
+                            <Link className="link" to="/posts?username=Sarah">
+                                Sarah
+                            </Link>
+                        </b>
                     </span>
-
-                    <span className="singlePostDate">
-                        Il y a 45 minutes
-                    </span>
+                    <span>Il y a 3 heures</span>
                 </div>
-                <p>
+                <p className="singlePostDescription">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Accusamus, esse veniam, magnam dolor excepturi obcaecati quae praesentium ducimus vel mollitia officiis laudantium, sit perspiciatis recusandae!
                     Alias officiis explicabo vero ullam.
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Accusamus, esse veniam, magnam dolor excepturi obcaecati quae praesentium ducimus vel mollitia officiis laudantium, sit perspiciatis recusandae!
                     Alias officiis explicabo vero ullam.
+                    <br />
+                    <br />
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Accusamus, esse veniam, magnam dolor excepturi obcaecati quae praesentium ducimus vel mollitia officiis laudantium, sit perspiciatis recusandae!
                     Alias officiis explicabo vero ullam.

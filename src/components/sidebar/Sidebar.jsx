@@ -1,10 +1,10 @@
-
+import { Link } from "react-router-dom";
 import "./sidebar.css";
 
 export default function Sidebar() {
     return (
         <div className="sidebar">
-            <span className="sidebarTitle">ABOUT ME</span>
+            <span className="sidebarTitle">A PROPOS DE MOI</span>
             <div className="sidebarItem">
                 <img
                     src="./aboutme.jpeg"
@@ -18,12 +18,43 @@ export default function Sidebar() {
             <div className="sidebarItem">
                 <span className="sidebarTitle">CATÉGORIES</span>
                 <ul className="sidebarList">
-                    <li className="sidebarListItem">Tech</li>
-                    <li className="sidebarListItem">Lifestyle</li>
-                    <li className="sidebarListItem">Bons plans</li>
-                    <li className="sidebarListItem">Tips</li>
-                    <li className="sidebarListItem">Diver</li>
-                    <li className="sidebarListItem">Digital</li>
+
+                    <li className="sidebarListItem">
+                        <Link className="link" to="/posts?cat=Tech">
+                            Tech
+                        </Link>
+                    </li>
+
+                    <li className="sidebarListItem">
+                        <Link className="link" to="/posts?cat=Lifestyle">
+                            Lifestyle
+                        </Link>
+                    </li>
+
+                    <li className="sidebarListItem">
+                        <Link className="link" to="/posts?cat=Lifestyle">
+                            Bons plans
+                        </Link>
+                    </li>
+
+                    <li className="sidebarListItem">
+                        <Link className="link" to="/posts?cat=Tips">
+                            Tips
+                        </Link>
+                    </li>
+
+
+                    <li className="sidebarListItem">
+                        <Link className="link" to="/posts?cat=  Diver">
+                            Divers
+                        </Link>
+                    </li>
+
+                    <li className="sidebarListItem">
+                        <Link className="link" to="/posts?cat= Digital">
+                            Digital
+                        </Link>
+                    </li>
                 </ul>
             </div>
             <div className="sidebarItem">
@@ -34,6 +65,6 @@ export default function Sidebar() {
                     <i className="sidebarIcon fa-brands fa-instagram"></i>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }

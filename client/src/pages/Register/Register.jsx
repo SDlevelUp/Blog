@@ -27,7 +27,7 @@ export default function Register() {
         <div className="register">
             <span className="registerTitle">S'ENREGISTRER</span>
             <form className="registerForm" onSubmit={handleSubmit}>
-                <label>Username</label>
+                <label>Pseudo</label>
                 <input
                     type="text"
                     className="registerInput"

@@ -1,70 +1,70 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../../context/Context";
 import "./herobar.css";
 
 export default function HeroBar() {
-    const user = true;
-    return (
-        <div className="hero">
-            <div className="heroLeft">
-                <i className="heroIcon fa-brands fa-facebook-f"></i>
-                <i className="heroIcon fa-brands fa-twitter"></i>
-                <i className="heroIcon fa-brands fa-instagram"></i>
-            </div>
-            <div className="heroCenter">
-                <ul className="heroList">
+    const { user, dispatch } = useContext(Context);
+    const PF = "http://localhost:5000/images/"
 
-                    <li className="heroListItem">
+    const handleLogout = () => {
+        dispatch({ type: "LOGOUT" });
+    };
+    return (
+        <div className="top">
+            <div className="topLeft">
+                <i className="sidebarIcon fa-brands fa-facebook-f"></i>
+                <i className="sidebarIcon fa-brands fa-twitter"></i>
+                <i className="sidebarIcon fa-brands fa-instagram"></i>
+            </div>
+            <div className="topCenter">
+                <ul className="topList">
+                    <li className="topListItem">
                         <Link className="link" to="/">
                             ACCEUIL
                         </Link>
                     </li>
-
-                    <li className="heroListItem">
+                    <li className="topListItem">
                         <Link className="link" to="/">
                             A PROPOS
                         </Link>
                     </li>
-
-                    <li className="heroListItem">
+                    <li className="topListItem">
                         <Link className="link" to="/">
                             CONTACT
                         </Link>
                     </li>
-
-                    <li className="heroListItem">
+                    <li className="topListItem">
                         <Link className="link" to="/write">
                             PUBLIER
                         </Link>
                     </li>
-                    {user && <li className="heroListItem signOut">Se déconnecter</li>}
+                    <li className="topListItem" onClick={handleLogout}>
+                        {user && "LOGOUT"}
+                    </li>
                 </ul>
             </div>
-            <div className="heroRight">
-
+            <div className="topRight">
                 {user ? (
-                    <Link className="link" to="/settings">
-                        <img
-                            className="heroBarImg"
-                            src="./profile.png"
-                            alt="Header background"
-                        />
+                    <Link to="/settings">
+                        <img className="topImg" src={PF + user.profilePic} alt="" />
                     </Link>
                 ) : (
                     <ul className="topList">
                         <li className="topListItem">
-                            <Link className="link" to="/login">
-                                LOGIN
+                            <Link className="linkInOut" to="/login">
+                                SE CONNECTER
                             </Link>
                         </li>
                         <li className="topListItem">
-                            <Link className="link" to="/register">
-                                REGISTER
+                            <Link className="linkInOut" to="/register">
+                                S'ENREGISTER
                             </Link>
                         </li>
                     </ul>
                 )}
-                <i className="heroSearchIcon fa-solid fa-magnifying-glass"></i>
+                <i className="topSearchIcon fas fa-search"></i>
             </div>
-        </div >
+        </div>
     );
 }

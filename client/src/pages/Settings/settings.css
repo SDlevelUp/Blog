@@ -16,15 +16,13 @@
 .settingsUpdateTitle {
     font-size: 30px;
     margin-bottom: 20px;
-    color: #f99797;
-    font-family: 'Lora', sans-serif;
+    color: lightcoral;
 }
 
 .settingsDeleteTitle {
     color: red;
-    font-size: 14px;
+    font-size: 12px;
     cursor: pointer;
-    font-family: 'Lora', sans-serif;
 }
 
 .settingsForm {
@@ -32,65 +30,48 @@
     flex-direction: column;
 }
 
-.settingsPhotoProfile {
+.settingsPP {
     display: flex;
     align-items: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px 0;
 }
 
-.settingsPhotoProfile>img {
-    height: 75px;
-    width: 75px;
+.settingsPP>img {
+    width: 70px;
+    height: 70px;
     border-radius: 20px;
     object-fit: cover;
 }
 
-.settingsProfilePictureIcon {
+.settingsPPIcon {
     width: 25px;
     height: 25px;
-    padding: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
     border-radius: 50%;
-    margin-left: 10px;
+    background-color: lightcoral;
     color: white;
-    background-color: #ea9c9c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
     cursor: pointer;
-}
-
-.settingsSubmitButton:focus {
-    outline-style: none;
 }
 
 .settingsForm>label {
     font-size: 20px;
     margin-top: 20px;
-    font-family: 'Lora', sans-serif;
-}
-
-.settingsPhotoProfileInput {
-    width: 30%;
-}
-
-.fa-user-circle {
-    font-size: 20px;
 }
 
 .settingsForm>input {
     color: gray;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px 0;
     height: 30px;
     border: none;
     border-bottom: 1px solid lightgray;
 }
 
-.settingsSubmitButton {
-    align-self: center;
+.settingsSubmit {
     width: 150px;
+    align-self: center;
     border: none;
     border-radius: 10px;
     color: white;
@@ -98,11 +79,4 @@
     padding: 10px;
     margin-top: 20px;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.settingsSubmitButton:hover {
-    background-color: rgb(1, 114, 114);
 }

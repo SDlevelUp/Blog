@@ -1,13 +1,24 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./sidebar.css";
 
 export default function Sidebar() {
+    const [cats, setCats] = useState([]);
+    useEffect(() => {
+        const getCats = async () => {
+            const res = await axios.get("/categories");
+            setCats(res.data);
+        };
+        getCats();
+    }, []);
+
     return (
         <div className="sidebar">
-            <span className="sidebarTitle">A PROPOS DE MOI</span>
             <div className="sidebarItem">
+                <span className="sidebarTitle">A PROPOS DE MOI</span>
                 <img
-                    src="./aboutme.jpeg"
+                    src="https://images.pexels.com/photos/4273432/pexels-photo-4273432.jpeg?auto=compress&cs=tinysrgb&w=1600"
                     alt=""
                 />
                 <p>
@@ -16,45 +27,13 @@ export default function Sidebar() {
                 </p>
             </div>
             <div className="sidebarItem">
-                <span className="sidebarTitle">CATÉGORIES</span>
+                <span className="sidebarTitle">CATEGORIES</span>
                 <ul className="sidebarList">
-
-                    <li className="sidebarListItem">
-                        <Link className="link" to="/posts?cat=Tech">
-                            Tech
+                    {cats.map((c) => (
+                        <Link to={`/?cat=${c.name}`} className="link">
+                            <li className="sidebarListItem">{c.name}</li>
                         </Link>
-                    </li>
-
-                    <li className="sidebarListItem">
-                        <Link className="link" to="/posts?cat=Lifestyle">
-                            Lifestyle
-                        </Link>
-                    </li>
-
-                    <li className="sidebarListItem">
-                        <Link className="link" to="/posts?cat=Lifestyle">
-                            Bons plans
-                        </Link>
-                    </li>
-
-                    <li className="sidebarListItem">
-                        <Link className="link" to="/posts?cat=Tips">
-                            Tips
-                        </Link>
-                    </li>
-
-
-                    <li className="sidebarListItem">
-                        <Link className="link" to="/posts?cat=  Diver">
-                            Divers
-                        </Link>
-                    </li>
-
-                    <li className="sidebarListItem">
-                        <Link className="link" to="/posts?cat= Digital">
-                            Digital
-                        </Link>
-                    </li>
+                    ))}
                 </ul>
             </div>
             <div className="sidebarItem">

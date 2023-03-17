@@ -1,48 +1,25 @@
-import { Link } from "react-router-dom";
 import "./post.css";
+import { Link } from "react-router-dom";
 
-export default function Post({ img }) {
+export default function Post({ post }) {
+    const PF = "http://localhost:5000/images/";
     return (
-        <div className='post'>
-            <img
-                className='postImg'
-                src={img}
-                alt=""
-            />
+        <div className="post">
+            {post.photo && <img className="postImg" src={PF + post.photo} alt="" />}
             <div className="postInfo">
-                <div className="postCategories">
-                    <span className="postCategory">
-                        <Link className="link" to="/posts?cat=Music">
-                            Divers
-                        </Link>
-                    </span>
-
-                    <span className="postCategory">
-                        <Link className="link" to="/posts?cat=Bon plan">
-                            Bons plans
-                        </Link>
-                    </span>
+                <div className="postCats">
+                    {post.categories.map((c) => (
+                        <span className="postCat">{c.name}</span>
+                    ))}
                 </div>
-
-                <span className="postTitle">
-                    <Link to="/post/abc" className="linkPost">
-                        Lorem ipsum dolor sit amet
-                    </Link>
+                <Link to={`/post/${post._id}`} className="link">
+                    <span className="postTitle">{post.title}</span>
+                </Link>
+                <span className="postDate">
+                    {new Date(post.createdAt).toDateString()}
                 </span>
-
-
-                <span className="postDate">Il y a une heure</span>
             </div>
-            <p className='postDescription'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, odio qui similique quasi cupiditate hic
-                repudiandae rem nemo consequuntur quos magnam. Expedita ducimus corporis laboriosam at mollitia sequi maxime atque.
-
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, odio qui similique quasi cupiditate hic
-                repudiandae rem nemo consequuntur quos magnam. Expedita ducimus corporis laboriosam at mollitia sequi maxime atque.
-
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, odio qui similique quasi cupiditate hic
-                repudiandae rem nemo consequuntur quos magnam. Expedita ducimus corporis laboriosam at mollitia sequi maxime atque.
-            </p>
+            <p className="postDesc">{post.desc}</p>
         </div>
-    )
+    );
 }

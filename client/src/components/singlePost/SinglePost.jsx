@@ -78,13 +78,13 @@ export default function SinglePost() {
                 )}
                 <div className="singlePostInfo">
                     <span className="singlePostAuthor">
-                        Author:
+                        Auteur:
                         <Link to={`/?user=${post.username}`} className="link">
                             <b> {post.username}</b>
                         </Link>
                     </span>
                     <span className="singlePostDate">
-                        {new Date(post.createdAt).toDateString()}
+                        {new Date(post.createdAt).toLocaleDateString("fr")}
                     </span>
                 </div>
                 {updateMode ? (
@@ -98,7 +98,7 @@ export default function SinglePost() {
                 )}
                 {updateMode && (
                     <button className="singlePostButton" onClick={handleUpdate}>
-                        Update
+                        Mettre à jour
                     </button>
                 )}
             </div>

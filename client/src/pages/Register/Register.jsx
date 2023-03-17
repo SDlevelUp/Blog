@@ -25,7 +25,7 @@ export default function Register() {
     };
     return (
         <div className="register">
-            <span className="registerTitle">Register</span>
+            <span className="registerTitle">S'ENREGISTRER</span>
             <form className="registerForm" onSubmit={handleSubmit}>
                 <label>Username</label>
                 <input
@@ -43,7 +43,7 @@ export default function Register() {
                     autoComplete="on"
                     onChange={(e) => setEmail(e.target.value)}
                 />
-                <label>Password</label>
+                <label>Mot de passe</label>
                 <input
                     type="password"
                     className="registerInput"
@@ -52,15 +52,15 @@ export default function Register() {
                     onChange={(e) => setPassword(e.target.value)}
                 />
                 <button className="registerButton" type="submit">
-                    Register
+                    S'ENREGISTRER
                 </button>
             </form>
             <button className="registerLoginButton">
                 <Link className="link" to="/login">
-                    Login
+                    Connexion
                 </Link>
             </button>
-            {error && <span style={{ color: "red", marginTop: "10px" }}>Something went wrong!</span>}
+            {error && <span style={{ color: "red", marginTop: "10px" }}>Oooups....quelque chose ne va pas!</span>}
         </div>
     );
 }

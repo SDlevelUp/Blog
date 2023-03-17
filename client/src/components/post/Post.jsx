@@ -16,7 +16,7 @@ export default function Post({ post }) {
                     <span className="postTitle">{post.title}</span>
                 </Link>
                 <span className="postDate">
-                    {new Date(post.createdAt).toDateString()}
+                    {new Date(post.createdAt).toLocaleDateString("fr")}
                 </span>
             </div>
             <p className="postDesc">{post.desc}</p>

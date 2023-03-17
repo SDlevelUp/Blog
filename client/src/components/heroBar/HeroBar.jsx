@@ -40,7 +40,7 @@ export default function HeroBar() {
                         </Link>
                     </li>
                     <li className="topListItem" onClick={handleLogout}>
-                        {user && "LOGOUT"}
+                        {user && "SE DÉCONNECTER"}
                     </li>
                 </ul>
             </div>

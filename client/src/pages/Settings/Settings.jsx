@@ -45,11 +45,11 @@ export default function Settings() {
         <div className="settings">
             <div className="settingsWrapper">
                 <div className="settingsTitle">
-                    <span className="settingsUpdateTitle">Update Your Account</span>
-                    <span className="settingsDeleteTitle">Delete Account</span>
+                    <span className="settingsUpdateTitle">Mettre à jour le comptet</span>
+                    <span className="settingsDeleteTitle">Supprimer le compte</span>
                 </div>
                 <form className="settingsForm" onSubmit={handleSubmit}>
-                    <label>Profile Picture</label>
+                    <label>Photo de profil</label>
                     <div className="settingsPP">
                         <img
                             src={file ? URL.createObjectURL(file) : PF + user.profilePic}
@@ -65,7 +65,7 @@ export default function Settings() {
                             onChange={(e) => setFile(e.target.files[0])}
                         />
                     </div>
-                    <label>Username</label>
+                    <label>Pseudo</label>
                     <input
                         type="text"
                         placeholder={user.username}
@@ -77,19 +77,19 @@ export default function Settings() {
                         placeholder={user.email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
-                    <label>Password</label>
+                    <label>Mot de passe</label>
                     <input
                         type="password"
                         onChange={(e) => setPassword(e.target.value)}
                     />
                     <button className="settingsSubmit" type="submit">
-                        Update
+                        Mettre à jour
                     </button>
                     {success && (
                         <span
                             style={{ color: "green", textAlign: "center", marginTop: "20px" }}
                         >
-                            Profile has been updated...
+                            Votre profil a bien été mis à jour...
                         </span>
                     )}
                 </form>
